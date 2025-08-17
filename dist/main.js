@@ -10,7 +10,12 @@ const serverless_express_1 = __importDefault(require("@vendia/serverless-express
 const swagger_1 = require("@nestjs/swagger");
 let server;
 async function bootstrap() {
-    const app = await core_1.NestFactory.create(app_module_1.AppModule, { cors: true });
+    const app = await core_1.NestFactory.create(app_module_1.AppModule);
+    app.enableCors({
+        origin: "*",
+        methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+        allowedHeaders: "Content-Type,Authorization",
+    });
     const config = new swagger_1.DocumentBuilder()
         .setTitle('Stock Guard API')
         .setDescription('API documentation for Stock Guard project')

@@ -7,10 +7,15 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 let server: Handler;
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule, { cors: true });
+  const app = await NestFactory.create(AppModule);
+app.enableCors({
+  origin: "*", 
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type,Authorization",
+});
 
 
-  // إعداد Swagger
+
   const config = new DocumentBuilder()
     .setTitle('Stock Guard API')
     .setDescription('API documentation for Stock Guard project')
