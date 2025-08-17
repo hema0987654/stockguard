@@ -18,6 +18,7 @@ const alerts_module_1 = require("./alerts/alerts.module");
 const schedule_1 = require("@nestjs/schedule");
 const mailer_1 = require("@nestjs-modules/mailer");
 const reports_module_1 = require("./reports/reports.module");
+const routmain_module_1 = require("./routmain/routmain.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -38,7 +39,8 @@ exports.AppModule = AppModule = __decorate([
                     from: '"No Reply" <no-reply@example.com>'
                 },
             }),
-            reports_module_1.ReportsModule
+            reports_module_1.ReportsModule,
+            routmain_module_1.RoutmainModule
         ],
         controllers: [],
         providers: [],

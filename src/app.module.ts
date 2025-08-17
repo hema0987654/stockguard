@@ -9,6 +9,8 @@ import { AlertsModule } from './alerts/alerts.module';
 import { ScheduleModule } from '@nestjs/schedule';
 import { MailerModule } from '@nestjs-modules/mailer';
 import { ReportsModule } from './reports/reports.module';
+import { RoutmainController } from './routmain/routmain.controller';
+import { RoutmainModule } from './routmain/routmain.module';
 
 
 @Module({
@@ -27,7 +29,8 @@ import { ReportsModule } from './reports/reports.module';
         from: '"No Reply" <no-reply@example.com>'
       },
     }),
-    ReportsModule
+    ReportsModule,
+    RoutmainModule
   ],
   controllers: [],
   providers: [],
