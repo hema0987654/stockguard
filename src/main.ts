@@ -26,6 +26,6 @@ async function bootstrap() {
 
 bootstrap();
 
-export const handler: Handler = async (event, context) => {
-  return server(event, context);
+export const handler: Handler = (event, context, callback) => {
+  return server(event, context, callback);
 };
